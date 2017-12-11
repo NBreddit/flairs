@@ -1,13 +1,14 @@
 $(document).ready(function() {
-  var folder = "flairs/";
-
+  var dir = "flairs/";
+  var fileextension = ".png";
   $.ajax({
-      url : folder,
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: dir,
       success: function (data) {
-          $(data).find("a").attr("href", function (i, val) {
-              if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                  $("#content").append( "<img src='"+ val +"' class='flair'>" );
-              }
+          //List all .png file names in the page
+          $(data).find("a:contains(" + fileextension + ")").each(function () {
+              var filename = this.href.replace(window.location.host, "").replace("http://", "");
+              $("#content").append("<img src='" + dir + filename + "'>");
           });
       }
   });
