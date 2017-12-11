@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var folder = "/flairs/";
+  var folder = "flairs/";
 
   $.ajax({
       url : folder,
