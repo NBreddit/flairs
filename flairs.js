@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var folder = "flairs/";
-
+$("div").css("border", "3px solid red");
   $.ajax({
       url : folder,
       success: function (data) {
