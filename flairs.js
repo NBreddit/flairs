@@ -1,7 +1,4 @@
-loadPage = function() {
-
-	//LOAD  FLAIRS
-	loadFlairs = function() {
+$(document).ready(function() {
     var folder = "flairs/";
 
     $.ajax({
@@ -14,8 +11,4 @@ loadPage = function() {
             });
         }
     });
-	}
-	loadFlairs();
-}
-
-document.addEventListener('DOMContentLoaded', loadPage, false);
+});
