@@ -2,13 +2,13 @@ $(document).ready(function() {
   var folder = "flairs/";
 
   $.ajax({
-      url : folder,
-      success: function (data) {
-          $(data).find("a").attr("href", function (i, val) {
-              if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                  $("body").append( "<img src='" + val +"'>" );
+              url: "getimage.php",
+              dataType: "json",
+              success: function (data) {
+
+                  $.each(data, function(i,filename) {
+                      $('#content').append('<img src="'+ filename +'"><br>');
+                  });
               }
           });
-      }
-  });
 });
