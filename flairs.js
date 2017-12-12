@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var folder = "icons/";
+    var folder = "https://github.com/NBreddit/flairs/tree/master/icons";
 
     $.ajax({
         url : folder,
